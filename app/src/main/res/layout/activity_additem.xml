@@ -151,26 +151,12 @@
         tools:layout_editor_absoluteX="110dp"
         tools:layout_editor_absoluteY="211dp" />
 
-    <Button
-        android:id="@+id/buttonscan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/barcodeview"
-        android:layout_centerHorizontal="true"
 
-        android:layout_marginBottom="-70dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Scan Bar/QR Code"
-        android:textStyle="italic"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="211dp" />
 
     <Button
         android:id="@+id/additembuttontodatabase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/buttonscan"
         android:layout_centerHorizontal="true"
 
         android:layout_marginBottom="-70dp"

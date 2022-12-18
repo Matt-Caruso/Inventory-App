@@ -35,23 +35,17 @@ public class additemActivity extends AppCompatActivity {
         databaseReferencecat = FirebaseDatabase.getInstance().getReference("Users");
         resulttextview = findViewById(R.id.barcodeview);
         additemtodatabase = findViewById(R.id.additembuttontodatabase);
-        scanbutton = findViewById(R.id.buttonscan);
         itemname = findViewById(R.id.edititemname);
         itemcategory= findViewById(R.id.editcategory);
         itemprice = findViewById(R.id.editprice);
-        itembarcode= findViewById(R.id.barcodeview);
+        //itembarcode= findViewById(R.id.barcodeview);
 
 
 
        // String result = finaluser.substring(0, finaluser.indexOf("@"));
 
 
-        scanbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ScanCodeActivity.class));
-            }
-        });
+
 
         additemtodatabase.setOnClickListener(new View.OnClickListener() {
             @Override
