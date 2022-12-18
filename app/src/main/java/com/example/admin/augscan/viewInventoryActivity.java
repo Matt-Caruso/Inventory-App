@@ -97,31 +97,30 @@ public class viewInventoryActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(scanItemsActivity.UsersViewHolder viewHolder, Items model, int position){
 
-                viewHolder.setDetails(getApplicationContext(),model.getItembarcode(),model.getItemcategory(),model.getItemname(),model.getItemprice());
+                viewHolder.setDetails(getApplicationContext(),model.getItemcategory(),model.getItemname(),model.getItemprice());
             }
         };
 
         mrecyclerview.setAdapter(firebaseRecyclerAdapter);
     }
-//    public static class UsersViewHolder extends RecyclerView.ViewHolder{
-//        View mView;
-//        public UsersViewHolder(View itemView){
-//            super(itemView);
-//            mView =itemView;
-//        }
-//
-//        public void setDetails(Context ctx, String itembarcode, String itemcategory, String itemname, String itemprice){
-//            TextView item_barcode = (TextView) mView.findViewById(R.id.viewitembarcode);
-//            TextView item_name = (TextView) mView.findViewById(R.id.viewitemname);
-//            TextView item_category = (TextView) mView.findViewById(R.id.viewitemcategory);
-//            TextView item_price = (TextView) mView.findViewById(R.id.viewitemprice);
-//
-//            item_barcode.setText(itembarcode);
-//            item_category.setText(itemcategory);
-//            item_name.setText(itemname);
-//            item_price.setText(itemprice);
-//        }
-//
-//    }
+    public static class UsersViewHolder extends RecyclerView.ViewHolder{
+        View mView;
+        public UsersViewHolder(View itemView){
+            super(itemView);
+            mView =itemView;
+        }
+
+        public void setDetails(Context ctx,  String itemcategory, String itemname, String itemprice){
+            TextView item_name = (TextView) mView.findViewById(R.id.viewitemname);
+            TextView item_category = (TextView) mView.findViewById(R.id.viewitemcategory);
+            TextView item_price = (TextView) mView.findViewById(R.id.viewitemprice);
+
+
+            item_category.setText(itemcategory);
+            item_name.setText(itemname);
+            item_price.setText(itemprice);
+        }
+
+    }
 
 }

@@ -35,7 +35,7 @@ public class additemActivity extends AppCompatActivity {
         databaseReferencecat = FirebaseDatabase.getInstance().getReference("Users");
         resulttextview = findViewById(R.id.barcodeview);
         additemtodatabase = findViewById(R.id.additembuttontodatabase);
-        //scanbutton = findViewById(R.id.buttonscan);
+        scanbutton = findViewById(R.id.buttonscan);
         itemname = findViewById(R.id.edititemname);
         itemcategory= findViewById(R.id.editcategory);
         itemprice = findViewById(R.id.editprice);
@@ -70,23 +70,18 @@ public  void additem(){
         String itemnameValue = itemname.getText().toString();
         String itemcategoryValue = itemcategory.getText().toString();
         String itempriceValue = itemprice.getText().toString();
-        String itembarcodeValue = itembarcode.getText().toString();
+        //String itembarcodeValue = itembarcode.getText().toString();
          final FirebaseUser users = firebaseAuth.getCurrentUser();
         String finaluser=users.getEmail();
          String resultemail = finaluser.replace(".","");
-    if (itembarcodeValue.isEmpty()) {
-        itembarcode.setError("It's Empty");
 
-        itembarcode.requestFocus();
-        return;
-    }
 
 
     if(!TextUtils.isEmpty(itemnameValue)&&!TextUtils.isEmpty(itemcategoryValue)&&!TextUtils.isEmpty(itempriceValue)){
 
-        Items items = new Items(itemnameValue,itemcategoryValue,itempriceValue,itembarcodeValue);
-        databaseReference.child(resultemail).child("Items").child(itembarcodeValue).setValue(items);
-        databaseReferencecat.child(resultemail).child("ItemByCategory").child(itemcategoryValue).child(itembarcodeValue).setValue(items);
+        Items items = new Items(itemnameValue,itemcategoryValue,itempriceValue);
+        databaseReference.child(resultemail).child("Items").setValue(items);
+        databaseReferencecat.child(resultemail).child("ItemByCategory").child(itemcategoryValue).setValue(items);
         itemname.setText("");
         itembarcode.setText("");
         itemprice.setText("");

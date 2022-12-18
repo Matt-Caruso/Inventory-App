@@ -4,20 +4,21 @@ public class Items {
     private String itemname;
     private String itemcategory;
     private String itemprice;
-    private String itembarcode;
+
 
 
 public Items() {
 
 }
 
-public Items(String itemname,String itemcategory,String itemprice,String itembarcode){
+public Items(String itemname,String itemcategory,String itemprice){
 
     this.itemname=itemname;
     this.itemcategory=itemcategory;
     this.itemprice=itemprice;
-    this.itembarcode= itembarcode;
+
 }
+
 
     public String getItemname() {
         return itemname;
@@ -31,7 +32,5 @@ public Items(String itemname,String itemcategory,String itemprice,String itembar
         return itemprice;
     }
 
-    public String getItembarcode() {
-        return itembarcode;
-    }
+
 }
